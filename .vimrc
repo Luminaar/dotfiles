@@ -58,3 +58,7 @@ filetype plugin indent on
 
 " LINE NUMBERS
 set number
+
+" SETTINGS FOR MARKDOWN FILES
+autocmd BufNewFile,BufRead,BufNew *.md set filetype=markdown
+autocmd FileType markdown set tabstop=4 shiftwidth=4 noexpandtab textwidth=69 formatoptions=t
