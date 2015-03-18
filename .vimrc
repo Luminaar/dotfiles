@@ -48,6 +48,10 @@ map <C-C> :bd<return>:vsp<return>
 syntax on
 
 " TABS SETTINGS
+" indentation for other files
+set tabstop=4
+set shiftwidth=4
+set noexpandtab
 " indentation for Python
 autocmd FileType python set tabstop=4 shiftwidth=4 expandtab
 " indentation for HTML
@@ -61,4 +65,4 @@ set number
 
 " SETTINGS FOR MARKDOWN FILES
 autocmd BufNewFile,BufRead,BufNew *.md set filetype=markdown
-autocmd FileType markdown set tabstop=4 shiftwidth=4 noexpandtab textwidth=69 formatoptions=t
+autocmd FileType markdown set tabstop=4 shiftwidth=4 noexpandtab textwidth=69 formatoptions=t2n autoindent tw=69 fo=tn
