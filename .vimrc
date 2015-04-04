@@ -39,8 +39,8 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " BUFFERS NAVIGATION
-map <C-B> :bp<return>
-map <C-N> :bn<return>
+map <C-B> :w <bar> bp<return>
+map <C-N> :w <bar> bn<return>
 
 " close buffer but keep the vertical split
 map <C-C> :bd<return>:vsp<return>
