@@ -26,7 +26,7 @@ let g:SimpylFold_fold_docstring = 0
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 
 " NERDTREE SETTINGS
-map <F2> :NERDTreeToggle<CR>
+map <F3> :NERDTreeToggle<CR>
 
 " SPLIT SETTINGS
 set splitbelow
@@ -66,3 +66,7 @@ set number
 " SETTINGS FOR MARKDOWN FILES
 autocmd BufNewFile,BufRead,BufNew *.md set filetype=markdown
 autocmd FileType markdown set tabstop=4 shiftwidth=4 noexpandtab textwidth=69 formatoptions=t2n autoindent tw=69 fo=tn
+
+" WRITE AND APACHE2 RELOAD
+map <F2> :w <CR>
+map <F5> :w <bar> !/etc/init.d/apache2 reload<CR>
