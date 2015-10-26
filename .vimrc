@@ -70,3 +70,14 @@ autocmd FileType markdown set tabstop=4 shiftwidth=4 noexpandtab textwidth=69 fo
 " WRITE AND APACHE2 RELOAD
 map <F2> :w <CR>
 map <F5> :w <bar> !/etc/init.d/apache2 reload<CR>
+
+" Wrap at 72 chars for comments.
+set formatoptions=cq textwidth=72 foldignore= wildignore+=*.py[co]
+
+" Highlight end of line whitespace.
+highlight WhitespaceEOL ctermbg=red guibg=red
+match WhitespaceEOL /\s\+$/
+
+" VIM TABS
+map <PageUp> :tabp <return>
+map <PageDown> :tabn <return>
