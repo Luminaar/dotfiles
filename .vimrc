@@ -18,6 +18,11 @@ filetype off
 filetype on
 " -------
 
+" Set color scheme, can be donwloaded here:
+" https://github.com/freeo/vim-kalisi
+colorscheme kalisi
+set background=dark
+
 " SIMPYLFOLD SETTINGS
 let g:SimpylFold_docstring_preview = 1
 let g:SimpylFold_fold_docstring = 0
