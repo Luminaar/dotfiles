@@ -226,7 +226,7 @@ if &background == "dark"
     "hi Normal ctermbg=238 ctermfg=252
     hi CursorLine ctermbg=239 term=none cterm=none
     hi CursorColumn ctermbg=239
-    hi NonText ctermbg=237 ctermfg=102
+    "hi NonText ctermbg=237 ctermfg=102
     hi Conceal ctermbg=237 ctermfg=230
     hi Comment ctermfg=32
     hi CommentURL cterm=underline ctermfg=68
@@ -294,7 +294,7 @@ if &background == "dark"
     hi FoldColumn cterm=bold ctermbg=236 ctermfg=145
     "hi Folded ctermbg=236 ctermfg=243
 	" foled code colors
-    hi Folded ctermbg=16 ctermfg=226
+    hi Folded ctermbg=248 ctermfg=0
 
     hi LineNr ctermbg=236 ctermfg=244
     hi StatusLine ctermbg=235 ctermfg=230 term=NONE cterm=NONE
