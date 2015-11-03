@@ -20,7 +20,7 @@ filetype on
 
 " Set color scheme, can be donwloaded here:
 " https://github.com/freeo/vim-kalisi
-colorscheme kalisi
+colorscheme mykalisi
 set background=dark
 
 " SIMPYLFOLD SETTINGS
