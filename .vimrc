@@ -83,6 +83,10 @@ set formatoptions=cq textwidth=72 foldignore= wildignore+=*.py[co]
 highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
 
+"Remove all trailing whitespace by pressing F4
+nnoremap <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+:au BufWrite *.* :let _s=@/|:%s/\s\+$//e|:let @/=_s
+
 " VIM TABS
 map <PageUp> :tabp <return>
 map <PageDown> :tabn <return>
