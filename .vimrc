@@ -79,14 +79,12 @@ map <F5> :w <bar> !/etc/init.d/apache2 reload<CR>
 " Wrap at 72 chars for comments.
 set formatoptions=cq textwidth=72 foldignore= wildignore+=*.py[co]
 
-" Highlight end of line whitespace.
-highlight WhitespaceEOL ctermbg=red guibg=red
-match WhitespaceEOL /\s\+$/
-
-"Remove all trailing whitespace by pressing F4
-nnoremap <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+"Remove all trailing whitespace on buffer save
 :au BufWrite *.* :let _s=@/|:%s/\s\+$//e|:let @/=_s
 
 " VIM TABS
 map <PageUp> :tabp <return>
 map <PageDown> :tabn <return>
+
+" Execute current file
+nnoremap <F9> :w<Enter>:silent !chmod 755 %<CR>:!%:p<Enter>
