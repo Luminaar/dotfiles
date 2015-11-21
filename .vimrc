@@ -88,3 +88,7 @@ map <PageDown> :tabn <return>
 
 " Execute current file
 nnoremap <F9> :w<Enter>:silent !chmod 755 %<CR>:!%:p<Enter>
+
+" Save and run dispatch.sh (script that dispatches extensions and
+" restarts apache)
+nnoremap <F6> :w<Enter>:! /var/www/web2py/applications/wpanel/modules/dispatch.sh<Enter><Enter>
