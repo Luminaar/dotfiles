@@ -7,3 +7,8 @@ alias lla='ls -la'
 
 # activate virtual env
 alias activate='source venv/bin/activate'
+
+# git
+alias st='git status'
+alias add='git add'
+alias cmt='git commit -m'
