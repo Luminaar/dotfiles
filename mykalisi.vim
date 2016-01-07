@@ -24,8 +24,8 @@ if &background == "dark"
   hi Number           guifg=#ffad3f
   hi Boolean 	        guifg=#94be54
   hi Float            guifg=#fff650
-  
-  " HTML Closing tags </...> 
+
+  " HTML Closing tags </...>
   " Vim variables
   hi Identifier       guifg=#29a3ac                   gui=none
   " HTML Starting tags <...>
@@ -71,7 +71,7 @@ if &background == "dark"
   hi Underlined       guifg=#b5b5b5 guibg=NONE    gui=underline
 
   " Misc syntax ###############################################################
-  
+
   hi Todo             guifg=#fff63f guibg=#736a3f gui=bold
 
   hi Directory        guifg=#b5b5b5 guibg=NONE    gui=bold
@@ -87,7 +87,7 @@ if &background == "dark"
   hi SpellRare        guisp=#eeeeee gui=undercurl
 
   " User interface ############################################################
-  
+
   hi Search           guifg=#000000 guibg=#b8ea00 gui=bold
   hi IncSearch        guifg=#f8cf00 guibg=#000000
 
@@ -126,13 +126,13 @@ if &background == "dark"
 
   hi VertSplit        guifg=#222222 guibg=#2b2b2b gui=none
   hi Title            guifg=#d0d0d0 guibg=NONE    gui=bold
-  
+
   hi TabLine          guifg=#afd700 guibg=#005f00 gui=none
   hi TabLineSel       guifg=#005f00 guibg=#afd700 gui=none
   hi TabLineFill      guifg=#303030 guibg=#a0a0a0 gui=none
 
   " Language Specific ##########################################################
-  
+
   " Python (non-default syntax file)
   hi PythonOperator   guifg=#7aa6c2 gui=none
   hi pythonDocstring        guifg=#6a7a8d guibg=NONE gui=none
@@ -153,7 +153,7 @@ if &background == "dark"
   hi link djangoFilter   SpecialChar
 
   hi markdownUrl guifg=#0087ff gui=underline ctermfg=33 cterm=underline
-  
+
   " mail
   hi link mailHeader  Comment
   hi link mailSubject	Constant
@@ -170,7 +170,7 @@ if &background == "dark"
 
 
   " Plugins ####################################################################
-  
+
   " https://github.com/kien/ctrlp.vim
   hi CtrlPMatch       guifg=#000000 guibg=#f8cf00 gui=none
 
@@ -283,7 +283,8 @@ if &background == "dark"
     hi ModeMsg cterm=bold ctermbg=148 ctermfg=16
     hi Cursor ctermbg=160 ctermfg=231
     hi CursorLineNr cterm=bold ctermbg=52 ctermfg=252
-    hi MatchParen ctermbg=112 ctermfg=234
+	"hi MatchParen ctermbg=112 ctermfg=234
+    hi MatchParen ctermbg=160 ctermfg=231
     hi Visual ctermbg=24
     hi VisualNOS ctermbg=239
     hi Pmenu ctermbg=236 ctermfg=249
@@ -294,7 +295,7 @@ if &background == "dark"
     hi FoldColumn cterm=bold ctermbg=236 ctermfg=145
     "hi Folded ctermbg=236 ctermfg=243
 	" foled code colors
-    hi Folded ctermbg=248 ctermfg=0
+    hi Folded ctermbg=248	ctermfg=0
 
     hi LineNr ctermbg=236 ctermfg=244
     hi StatusLine ctermbg=235 ctermfg=230 term=NONE cterm=NONE
@@ -375,17 +376,17 @@ else
   " Misc syntax ###############################################################
   "
   hi Todo             guifg=#000000 guibg=#ffff00 gui=bold
- 
+
   hi Directory        guifg=#0060a0 guibg=NONE    gui=bold
-  " html: special keywords in jscript: window log 
+  " html: special keywords in jscript: window log
   hi Keyword          guifg=#66b600               gui=none
   hi Title            guifg=#1060a0 guibg=NONE    gui=bold
   hi NonText          guifg=#000000 guibg=#e6e6e6 gui=none
- 
+
   hi Conceal          guifg=#303030 guibg=#e0e8e0
 
-  hi DiffAdd                        guibg=#ddffdd 
-  hi DiffChange                     guibg=#e8e8e8 
+  hi DiffAdd                        guibg=#ddffdd
+  hi DiffChange                     guibg=#e8e8e8
   hi DiffText         guifg=#000055 guibg=#ddddff
   hi DiffDelete       guifg=#eecccc guibg=#ffdddd
 
@@ -437,7 +438,7 @@ else
 
 
   " Language Specific ##########################################################
-  
+
   " Python (non-default syntax file)
   hi PythonOperator   guifg=#0167dd               gui=none
   hi pythonDocstring        guifg=#004B84 guibg=NONE    gui=none
@@ -476,10 +477,10 @@ else
 
 
   " Plugins ####################################################################
-  
+
   " https://github.com/kien/ctrlp.vim
   hi link CtrlPMatch    Search
- 
+
   " https://github.com/scrooloose/nerdtree
   hi NERDTreeDir      guifg=#0087d7 gui=bold ctermfg=32 cterm=bold
   hi link NERDTreeDirSlash NERDTreeDir
@@ -495,7 +496,7 @@ else
   hi TagbarScope      guifg=#0087d7 gui=bold ctermfg=32 cterm=bold
   hi TagbarType       guifg=#66b600 gui=bold ctermfg=70 cterm=bold
   hi TagbarKind       guifg=#0000ff ctermfg=21
-  
+
   " https://github.com/justinmk/vim-sneak
   hi SneakPluginTarget guibg=#ffaf00 guifg=#ffff00 gui=bold ctermbg=214 ctermfg=226 cterm=bold
   hi link SneakPluginScope Visual
@@ -516,7 +517,7 @@ else
   " https://github.com/davidhalter/jedi-vim
   hi jediFunction     guibg=#878787 guifg=#f0f0f0 ctermbg=244 ctermfg=255
   hi jediFat          guibg=#878787 guifg=#afd700 gui=bold ctermbg=244 ctermfg=148 cterm=bold
-  
+
   " https://github.com/tomtom/quickfixsigns_vim
   if g:kalisi_recolor_quickfixsigns == 1
        hi QFSignsMark       guifg=#005faf guibg=#a0a0a0 gui=bold ctermfg=25 ctermbg=247 cterm=bold
@@ -613,4 +614,4 @@ else
     hi javaScript ctermfg=59
     hi DjangoBlock cterm=bold ctermfg=22
   endif
-endif 
+endif
