@@ -16,3 +16,5 @@ alias cmt='git commit -m'
 alias lisp='rlwrap sbcl'
 
 alias home='cd ~; newgrp luminar'
+
+alias arizona='ssh luminar.xyz'
