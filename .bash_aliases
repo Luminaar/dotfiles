@@ -18,3 +18,6 @@ alias lisp='rlwrap sbcl'
 alias home='cd ~; newgrp luminar'
 
 alias arizona='ssh luminar.xyz'
+
+# start web2py
+alias devel='python /var/www/web2py/web2py.py -a '12345' -i 127.0.0.1 -p 8000'
