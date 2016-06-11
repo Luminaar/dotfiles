@@ -37,6 +37,7 @@ nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 
 " NERDTREE SETTINGS
 map <F3> :NERDTreeToggle<CR>
+let NERDTreeIgnore=['\.pyc$', '\~$', '__init__\.py$', '__init__\.pyc$']
 
 " SPLIT SETTINGS
 set splitbelow
