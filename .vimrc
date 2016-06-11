@@ -11,6 +11,11 @@ Plugin 'gmarik/Vundle.vim'
 " Installed plugins
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'tmhedberg/SimpylFold'
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'bling/vim-bufferline'
+
 
 call vundle#end()
 
@@ -92,3 +97,13 @@ nnoremap <F9> :w<Enter>:silent !chmod 755 %<CR>:!%:p<Enter>
 " Save and run dispatch.sh (script that dispatches extensions and
 " restarts apache)
 nnoremap <F6> :w<Enter>:! /var/www/web2py/applications/wpanel/modules/dispatch.sh<Enter><Enter>
+
+" CtrlP
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+" Airline
+set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:bufferline_echo = 0
+set noshowmode
+let g:airline#extensions#tabline#enabled = 1
