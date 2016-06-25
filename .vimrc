@@ -56,6 +56,12 @@ map <C-N> :w <bar> bn<return>
 " close buffer but keep the vertical split
 map <C-C> :bd<return>:vsp<return>
 
+" close buffer like in a browser
+map <C-W> :bd<return>
+
+" edit like in a browser
+map <C-T> :e<space>
+
 syntax on
 
 " TABS SETTINGS
