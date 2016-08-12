@@ -111,6 +111,8 @@ nnoremap <F6> :w<Enter>:! /var/www/web2py/applications/wpanel/modules/dispatch.s
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " Airline
+set t_Co=256
+let g:airline_theme='murmur'
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:bufferline_echo = 0
