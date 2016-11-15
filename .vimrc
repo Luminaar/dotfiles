@@ -75,6 +75,8 @@ set noexpandtab
 autocmd FileType python set tabstop=4 shiftwidth=4 expandtab
 " indentation for HTML
 autocmd FileType html set tabstop=2 shiftwidth=2 expandtab
+" indentation for JS
+autocmd FileType javascript set tabstop=2 shiftwidth=2 expandtab
 
 " INDENTATION SETTINGS
 filetype plugin indent on
@@ -103,9 +105,15 @@ map <PageDown> :tabn <return>
 " Execute current file
 nnoremap <F9> :w<Enter>:silent !chmod 755 %<CR>:!%:p<Enter>
 
+" Devel mappings
+nnoremap <F10> :w<Enter>:! clear; python -m unittest discover ./tests "*test.py"<Enter>
+nnoremap <F11> :w<Enter>:! clear; /var/www/scripts/local_dispatch.sh<Enter><Enter>
+nnoremap <F12> :w<Enter>:! clear; /var/www/scripts/rebuild.py devel<Enter><Enter>
+
+
 " Save and run dispatch.sh (script that dispatches extensions and
 " restarts apache)
-nnoremap <F6> :w<Enter>:! /var/www/web2py/applications/wpanel/modules/dispatch.sh<Enter><Enter>
+nnoremap <F6> :w<Enter>:! /var/www/scripts/local_dispatch.sh<Enter><Enter>
 
 " CtrlP
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -118,3 +126,6 @@ let g:airline_powerline_fonts = 1
 let g:bufferline_echo = 0
 set noshowmode
 let g:airline#extensions#tabline#enabled = 1
+
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
