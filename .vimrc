@@ -110,6 +110,8 @@ nnoremap <F10> :w<Enter>:! clear; python -m unittest discover ./tests "*test.py"
 nnoremap <F11> :w<Enter>:! clear; /var/www/scripts/local_dispatch.sh<Enter><Enter>
 nnoremap <F12> :w<Enter>:! clear; /var/www/scripts/rebuild.py devel<Enter><Enter>
 
+" Timestamp
+:nnoremap <F4> "=strftime("%Y-%m-%d")<CR>P
 
 " Save and run dispatch.sh (script that dispatches extensions and
 " restarts apache)
