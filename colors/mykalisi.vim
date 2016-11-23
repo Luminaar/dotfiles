@@ -232,7 +232,7 @@ if &background == "dark"
     hi CommentURL cterm=underline ctermfg=68
     hi CommentEmail cterm=underline ctermfg=68
     hi Constant cterm=bold ctermfg=214
-    hi String ctermfg=220
+    hi String ctermfg=71
     hi Character ctermfg=171
     hi Number ctermfg=214
     hi Boolean ctermfg=149
