@@ -17,6 +17,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'bling/vim-bufferline'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'jlanzarotta/bufexplorer'
 
 
 call vundle#end()
@@ -25,10 +27,18 @@ filetype off
 filetype on
 " -------
 
+let mapleader=";"
+
+" Remap Esc key
+inoremap jj <Esc>
+
 " Set color scheme, can be donwloaded here:
 " https://github.com/freeo/vim-kalisi
 colorscheme mykalisi
 set background=dark
+
+" Autocompletion options
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " SIMPYLFOLD SETTINGS
 let g:SimpylFold_docstring_preview = 1
@@ -46,23 +56,17 @@ set splitbelow
 set splitright
 
 " Split buffers navigating
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <Leader>j <C-W><C-J>
+nnoremap <Leader>k <C-W><C-K>
+nnoremap <Leader>l <C-W><C-L>
+nnoremap <Leader>h <C-W><C-H>
 
 " BUFFERS NAVIGATION
-map <C-B> :w <bar> bp<return>
-map <C-N> :w <bar> bn<return>
+map <Leader>b :w <bar> bp<return>
+map <Leader>n :w <bar> bn<return>
 
-" close buffer but keep the vertical split
-map <C-C> :bd<return>:vsp<return>
-
-" close buffer like in a browser
-map <C-W> :bd<return>
-
-" edit like in a browser
-map <C-T> :e<space>
+" Buffer explorer
+nnoremap <Leader>e :ToggleBufExplorer<enter>
 
 syntax on
 
@@ -88,10 +92,6 @@ set number
 autocmd BufNewFile,BufRead,BufNew *.md set filetype=markdown
 autocmd FileType markdown set tabstop=4 shiftwidth=4 noexpandtab textwidth=69 formatoptions=t2n autoindent tw=69 fo=tn
 
-" WRITE AND APACHE2 RELOAD
-map <F2> :w <CR>
-map <F5> :w <bar> !/etc/init.d/apache2 reload<CR>
-
 " Wrap at 72 chars for comments.
 set formatoptions=cq textwidth=72 foldignore= wildignore+=*.py[co]
 
@@ -106,19 +106,9 @@ map <PageDown> :tabn <return>
 nnoremap <F9> :w<Enter>:silent !chmod 755 %<CR>:!%:p<Enter>
 
 " Devel mappings
+nnoremap <F6> :w<Enter>:! /var/www/scripts/local_dispatch.sh<Enter><Enter>
 nnoremap <F10> :w<Enter>:! clear; python -m unittest discover ./tests "*test.py"<Enter>
 nnoremap <F11> :w<Enter>:! clear; /var/www/scripts/local_dispatch.sh<Enter><Enter>
-nnoremap <F12> :w<Enter>:! clear; /var/www/scripts/rebuild.py devel<Enter><Enter>
-
-" Timestamp
-:nnoremap <F4> "=strftime("%Y-%m-%d")<CR>P
-
-" Save and run dispatch.sh (script that dispatches extensions and
-" restarts apache)
-nnoremap <F6> :w<Enter>:! /var/www/scripts/local_dispatch.sh<Enter><Enter>
-
-" CtrlP
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " Airline
 set t_Co=256
