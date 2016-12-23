@@ -30,7 +30,9 @@ filetype on
 let mapleader=";"
 
 " Remap Esc key
-inoremap jj <Esc>
+inoremap ;; <Esc>
+nnoremap ;; <Esc>
+vnoremap ;; <Esc>
 
 " Set color scheme, can be donwloaded here:
 " https://github.com/freeo/vim-kalisi
