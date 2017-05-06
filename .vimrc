@@ -47,6 +47,9 @@ map spc :set spelllang=cs <bar> set spell<return>
 " Turn off
 map spn :set nospell<return>
 
+" Paste options
+set pastetoggle=<leader>p
+
 " Autocompletion options
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
