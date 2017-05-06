@@ -39,6 +39,14 @@ vnoremap ;; <Esc>
 colorscheme mykalisi
 set background=dark
 
+" Spell check options
+" Eglish
+map spe :set spelllang=en_us <bar> set spell<return>
+" Czech
+map spc :set spelllang=cs <bar> set spell<return>
+" Turn off
+map spn :set nospell<return>
+
 " Autocompletion options
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
