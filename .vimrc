@@ -120,7 +120,7 @@ nnoremap <F9> :w<Enter>:silent !chmod 755 %<CR>:!%:p<Enter>
 
 " Devel mappings
 nnoremap <F6> :w<Enter>:! /var/www/scripts/local_dispatch.sh<Enter><Enter>
-nnoremap <F10> :w<Enter>:! clear; python -m unittest discover ./tests "*test.py"<Enter>
+nnoremap <F10> :w<Enter>:! clear; python3 -m pytest<Enter>
 nnoremap <F11> :w<Enter>:! clear; /var/www/scripts/local_dispatch.sh<Enter><Enter>
 
 " Airline
