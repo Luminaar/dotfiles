@@ -5,9 +5,7 @@ alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
 
-alias python='bpython'
-
-# activate virtual env
+	# activate virtual env
 alias activate='source venv/bin/activate'
 
 # git
