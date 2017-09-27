@@ -30,6 +30,6 @@ alias home='cd ~; newgrp luminar'
 alias arizona='ssh luminar.xyz'
 
 # start web2py
-alias devel='/var/www/web2py/web2py.py -a '12345' -i 127.0.0.1 -p 8000'
+alias devel='./web2py/web2py.py -a '12345' -i 127.0.0.1 -p 8000'
 
 alias mysqlp='mysql -u root'
