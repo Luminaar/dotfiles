@@ -68,6 +68,10 @@ let NERDTreeIgnore=['\.pyc$', '\~$', '__init__\.py$', '__init__\.pyc$']
 set splitbelow
 set splitright
 
+" Split resize
+nnoremap <silent><Leader>. :vertical resize -5<enter>
+nnoremap <silent><Leader>, :vertical resize +5<enter>
+
 " Split buffers navigating
 nnoremap <Leader>j <C-W><C-J>
 nnoremap <Leader>k <C-W><C-K>
