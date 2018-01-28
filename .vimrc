@@ -33,6 +33,9 @@ let mapleader=";"
 inoremap ;; <Esc>
 nnoremap ;; <Esc>
 vnoremap ;; <Esc>
+inoremap ůů <Esc>
+nnoremap ůů <Esc>
+vnoremap ůů <Esc>
 
 " Set color scheme, can be donwloaded here:
 " https://github.com/freeo/vim-kalisi
