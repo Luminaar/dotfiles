@@ -19,6 +19,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'bling/vim-bufferline'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'jlanzarotta/bufexplorer'
+Plugin 'gavocanov/vim-js-indent'
 
 
 call vundle#end()
@@ -94,6 +95,11 @@ syntax on
 " indentation for other files
 au BufEnter *.css set nocindent
 au BufLeave *.css set cindent
+
+
+" Javascript settings
+autocmd BufNewFile,BufRead,BufNew *.vue set filetype=javascript
+au BufNewFile,BufRead,BufNew *.vue set syntax=html
 
 set tabstop=4
 set shiftwidth=4
