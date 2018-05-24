@@ -53,19 +53,6 @@ map spn :set nospell<return>
 " Paste options
 set pastetoggle=<leader>p
 
-" Bracket and quote closing
-inoremap        (  ()<Left>
-inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
-
-inoremap        {  {}<Left>
-inoremap <expr> }  strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
-
-inoremap        [  []<Left>
-inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
-
-inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
-inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == "\"" ? "\<Right>" : "\"\"\<Left>"
-
 " Autocompletion options
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
@@ -139,9 +126,8 @@ map <PageDown> :tabn <return>
 nnoremap <F9> :w<Enter>:silent !chmod 755 %<CR>:!%:p<Enter>
 
 " Devel mappings
-nnoremap <F6> :w<Enter>:! /var/www/scripts/local_dispatch.sh<Enter><Enter>
+nnoremap <F6> :w<Enter>:! /home/luminar/work/scripts/local_dispatch.sh<Enter><Enter>
 nnoremap <F10> :w<Enter>:! clear; python3 -m pytest<Enter>
-nnoremap <F11> :w<Enter>:! clear; /var/www/scripts/local_dispatch.sh<Enter><Enter>
 
 " Airline
 set t_Co=256
