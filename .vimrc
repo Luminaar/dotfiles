@@ -11,7 +11,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Installed plugins
-Plugin 'scrooloose/nerdtree.git'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
@@ -20,8 +19,12 @@ Plugin 'bling/vim-bufferline'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'jlanzarotta/bufexplorer'
 
-
 call vundle#end()
+
+" Other plugins
+" - auto-pairs
+" - commentary
+" - indent-text-object
 
 filetype off
 filetype on
@@ -63,10 +66,6 @@ let g:SimpylFold_fold_docstring = 0
 " map Space to toggle folds inside fold and step to the left outside
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
 
-" NERDTREE SETTINGS
-map <F3> :NERDTreeToggle<CR>
-let NERDTreeIgnore=['\.pyc$', '\~$', '__init__\.py$', '__init__\.pyc$']
-
 " SPLIT SETTINGS
 set splitbelow
 set splitright
@@ -90,23 +89,26 @@ nnoremap <Leader>e :ToggleBufExplorer<enter>
 
 syntax on
 
-" TABS SETTINGS
-" indentation for other files
 set tabstop=4
 set shiftwidth=4
 set noexpandtab
+
+" INDENTATION SETTINGS
+filetype plugin indent on
+
 " indentation for Python
 autocmd FileType python set tabstop=4 shiftwidth=4 expandtab
 " indentation for HTML
 autocmd FileType html set tabstop=2 shiftwidth=2 expandtab
 " indentation for JS
 autocmd FileType javascript set tabstop=2 shiftwidth=2 expandtab
-
-" INDENTATION SETTINGS
-filetype plugin indent on
+" indentation for other files
+au BufEnter *.css set nocindent
+au BufLeave *.css set cindent
 
 " LINE NUMBERS
 set number
+set relativenumber
 
 " SETTINGS FOR MARKDOWN FILES
 autocmd BufNewFile,BufRead,BufNew *.md set filetype=markdown
@@ -123,11 +125,10 @@ map <PageUp> :tabp <return>
 map <PageDown> :tabn <return>
 
 " Execute current file
-nnoremap <F9> :w<Enter>:silent !chmod 755 %<CR>:!%:p<Enter>
+nnoremap <F9> :w<Enter> :!clear;python %:p<Enter>
 
 " Devel mappings
-nnoremap <F6> :w<Enter>:! /home/luminar/work/scripts/local_dispatch.sh<Enter><Enter>
-nnoremap <F10> :w<Enter>:! clear; python3 -m pytest<Enter>
+nnoremap <F6> :w<Enter>:! /var/www/scripts/local_dispatch.sh<Enter><Enter>
 
 " Airline
 set t_Co=256
