@@ -1,4 +1,5 @@
 set encoding=utf-8
+set hidden
 
 " PLUGINS
 
@@ -15,13 +16,11 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'bling/vim-bufferline'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'jlanzarotta/bufexplorer'
 
 call vundle#end()
 
-" Other plugins
+" Other plugins installed manually
 " - auto-pairs
 " - commentary
 " - indent-text-object
@@ -30,15 +29,7 @@ filetype off
 filetype on
 " -------
 
-let mapleader=";"
-
-" Remap Esc key
-inoremap ;; <Esc>
-nnoremap ;; <Esc>
-vnoremap ;; <Esc>
-inoremap ůů <Esc>
-nnoremap ůů <Esc>
-vnoremap ůů <Esc>
+let mapleader=" "
 
 " Set color scheme, can be donwloaded here:
 " https://github.com/freeo/vim-kalisi
@@ -58,15 +49,13 @@ set pastetoggle=<leader>p
 
 " Autocompletion options
 let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_filetype_blacklist = {'robot': 1}
 
-" SIMPYLFOLD SETTINGS
+" Simpylfold settings
 let g:SimpylFold_docstring_preview = 1
 let g:SimpylFold_fold_docstring = 0
 
-" map Space to toggle folds inside fold and step to the left outside
-nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
-
-" SPLIT SETTINGS
+" Split settings
 set splitbelow
 set splitright
 
@@ -80,39 +69,19 @@ nnoremap <Leader>k <C-W><C-K>
 nnoremap <Leader>l <C-W><C-L>
 nnoremap <Leader>h <C-W><C-H>
 
-" BUFFERS NAVIGATION
-map <Leader>b :w <bar> bp<return>
-map <Leader>n :w <bar> bn<return>
+" Buffer navigation
+nnoremap <Leader>e :ls<CR>:b<Space>
+map <Leader>a :e#<return>
 
-" Buffer explorer
-nnoremap <Leader>e :ToggleBufExplorer<enter>
 
+" File editing settings
+set number
+set relativenumber
 syntax on
-
 set tabstop=4
 set shiftwidth=4
 set noexpandtab
-
-" INDENTATION SETTINGS
 filetype plugin indent on
-
-" indentation for Python
-autocmd FileType python set tabstop=4 shiftwidth=4 expandtab
-" indentation for HTML
-autocmd FileType html set tabstop=2 shiftwidth=2 expandtab
-" indentation for JS
-autocmd FileType javascript set tabstop=2 shiftwidth=2 expandtab
-" indentation for other files
-au BufEnter *.css set nocindent
-au BufLeave *.css set cindent
-
-" LINE NUMBERS
-set number
-set relativenumber
-
-" SETTINGS FOR MARKDOWN FILES
-autocmd BufNewFile,BufRead,BufNew *.md set filetype=markdown
-autocmd FileType markdown set tabstop=4 shiftwidth=4 noexpandtab textwidth=69 formatoptions=t2n autoindent tw=69 fo=tn
 
 " Wrap at 72 chars for comments.
 set formatoptions=cq textwidth=72 foldignore= wildignore+=*.py[co]
@@ -120,24 +89,31 @@ set formatoptions=cq textwidth=72 foldignore= wildignore+=*.py[co]
 "Remove all trailing whitespace on buffer save
 :au BufWrite *.* :let _s=@/|:%s/\s\+$//e|:let @/=_s
 
-" VIM TABS
-map <PageUp> :tabp <return>
-map <PageDown> :tabn <return>
+" Specific filetypes
+autocmd FileType python set tabstop=4 shiftwidth=4 expandtab
+au BufRead *.py %foldo!  " Open all folds when enetring python files for the first time
+autocmd FileType html set tabstop=2 shiftwidth=2 expandtab
+autocmd FileType javascript set tabstop=2 shiftwidth=2 expandtab
+au BufEnter *.css set nocindent
+au BufLeave *.css set cindent
+autocmd BufNewFile,BufRead,BufNew *.md set filetype=markdown
+autocmd FileType markdown set tabstop=4 shiftwidth=4 noexpandtab textwidth=69 formatoptions=t2n autoindent tw=69 fo=tn
 
-" Execute current file
+
+" Shortcuts
+
+" Execute current Python file
 nnoremap <F9> :w<Enter> :!clear;python %:p<Enter>
 
 " Devel mappings
-nnoremap <F6> :w<Enter>:! /var/www/scripts/local_dispatch.sh<Enter><Enter>
+nnoremap <F5> :w<Enter>:! robot %:p<Enter>
+nnoremap <F6> :w<Enter>:! ~/.local_dispatch.sh<Enter><Enter>
 
-" Airline
+" Airline settings
 set t_Co=256
 let g:airline_theme='murmur'
-set laststatus=2
 let g:airline_powerline_fonts = 1
-let g:bufferline_echo = 0
 set noshowmode
-let g:airline#extensions#tabline#enabled = 1
-
+let g:airline#extensions#tabline#enabled = 0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
