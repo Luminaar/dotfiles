@@ -31,6 +31,9 @@ filetype on
 
 let mapleader=" "
 
+set ignorecase
+set smartcase
+
 " Set color scheme, can be donwloaded here:
 " https://github.com/freeo/vim-kalisi
 colorscheme mykalisi
