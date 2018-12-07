@@ -94,7 +94,7 @@ set formatoptions=cq textwidth=72 foldignore= wildignore+=*.py[co]
 
 " Specific filetypes
 autocmd FileType python set tabstop=4 shiftwidth=4 expandtab
-au BufRead *.py %foldo!  " Open all folds when enetring python files for the first time
+au BufRead *.py silent! %foldo!  " Open all folds when enetring python files for the first time
 autocmd FileType html set tabstop=2 shiftwidth=2 expandtab
 autocmd FileType javascript set tabstop=2 shiftwidth=2 expandtab
 au BufEnter *.css set nocindent
