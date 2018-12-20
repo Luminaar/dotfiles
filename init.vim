@@ -9,6 +9,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'michaeljsmith/vim-indent-object'
+Plug 'tpope/vim-surround'
 Plug 'alfredodeza/pytest.vim'
 
 call plug#end()
@@ -41,6 +42,8 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 """ Editor settings
+
+tnoremap <Esc> <C-\><C-n>
 
 set number
 set relativenumber
