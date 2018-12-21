@@ -32,10 +32,14 @@ let g:ale_python_mypy_options = "--ignore-missing-imports"
 "" Pytest
 nmap <Leader>f :Pytest function<enter>
 nmap <Leader>vf :Pytest function verbose<enter>
+" Allow debugger to run (when breakpoints are set)
+nmap <Leader>df :Pytest function -s<enter>
 nmap <Leader>i :Pytest file<enter>
 nmap <Leader>vi :Pytest file verbose<enter>
 nmap <Leader>p :Pytest project<enter>
 nmap <Leader>vp :Pytest project verbose<enter>
+
+
 
 " Jump to errors
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
@@ -84,6 +88,7 @@ nnoremap <silent><Leader>, :vertical resize -5<enter>
 
 "" Python
 au FileType python set tabstop=4 shiftwidth=4 expandtab
+au FileType python nnoremap <Leader>b obreakpoint()<esc>
 
 "" Cfg
 au FileType cfg set tabstop=4 shiftwidth=4 expandtab
