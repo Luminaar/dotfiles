@@ -1,6 +1,7 @@
 # Dotfiles
 This repo contains all my configuration files.
 
-* .vimrc - vim configuration
+* .vimrc - old configuration for Vim
 * mykalisi.vim - my vim color scheme
-* .bash_aliases - bash aliases I use
+* .zshrc - my ZShell setup
+* init.vim - NeoVim configuration
