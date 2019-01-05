@@ -1,0 +1,1 @@
+/home/luminar/misc/dotfiles/.vim/colors/mykalisi.vim
