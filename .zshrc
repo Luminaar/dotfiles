@@ -5,7 +5,6 @@
 export ZSH=/home/luminar/.oh-my-zsh
 
 ZSH_THEME="steeef"
-ENABLE_CORRECTION="true"
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(
