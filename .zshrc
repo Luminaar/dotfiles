@@ -35,6 +35,7 @@ export SDKMAN_DIR="/home/luminar/.sdkman"
 
 # FZF integration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+alias gga='git add $(git -c color.status=always status --short | sed -E "s/(.{2}) (.*)/\1: \2/" | fzf --ansi --nth=2 --tac --no-sort --delimiter=":" --bind=ctrl-a:toggle-all --multi --preview "~/IdeaProjects/vps-ng/diff-or-cat.sh {2}" | cut --delimiter=":" --fields=2)'
 
 # https://github.com/changyuheng/zsh-interactive-cd
 [ -f ~/.zsh/zsh-interactive-cd.plugin.zsh ] && source ~/.zsh/zsh-interactive-cd.plugin.zsh
