@@ -32,3 +32,10 @@ autoload -Uz compinit && compinit -i
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/luminar/.sdkman"
 [[ -s "/home/luminar/.sdkman/bin/sdkman-init.sh" ]] && source "/home/luminar/.sdkman/bin/sdkman-init.sh"
+
+# FZF integration
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# https://github.com/changyuheng/zsh-interactive-cd
+[ -f ~/.zsh/zsh-interactive-cd.plugin.zsh ] && source ~/.zsh/zsh-interactive-cd.plugin.zsh
+

@@ -11,6 +11,8 @@ Plug 'tpope/vim-commentary'
 Plug 'jeetsukumaran/vim-pythonsense'
 Plug 'tpope/vim-surround'
 Plug 'alfredodeza/pytest.vim'
+Plug 'udalov/kotlin-vim'
+Plug '~/.fzf'
 
 call plug#end()
 
@@ -54,6 +56,7 @@ nnoremap <Leader>h <C-W><C-H>
 " Buffer navigation
 nnoremap <Leader>e :ls<CR>:b<Space>
 map <Leader>a :e#<return>
+map <Leader>f :FZF<return>
 
 nnoremap <silent><Leader>. :vertical resize +5<enter>
 nnoremap <silent><Leader>, :vertical resize -5<enter>
