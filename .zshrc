@@ -25,6 +25,11 @@ alias mkenv="python3.7 -m venv venv; activate;"
 alias delenv="deactivate; rm -rf venv;"
 alias renv="delenv; mkenv;"
 
+alias devel='./web2py/web2py.py -a '12345' -i 127.0.0.1 -p 8000'
+alias mysqlp='mysql -u root'
+
+alias ns=nslookup
+
 # Completions
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
