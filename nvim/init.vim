@@ -78,6 +78,12 @@ autocmd BufNewFile,BufRead,BufNew *.md set filetype=markdown
 "" Markdown
 autocmd FileType markdown set tabstop=4 shiftwidth=4 noexpandtab textwidth=69 formatoptions=t2n autoindent tw=69 fo=tn
 
+"" Conf file
+au BufNewFile,BufRead *.conf set filetype=hocon
+autocmd FileType hocon set tabstop=2 shiftwidth=2 expandtab
+autocmd FileType hocon set cindent
+
+
 """ Spell check
 " Eglish
 map spe :set spelllang=en_us <bar> set spell<return>
