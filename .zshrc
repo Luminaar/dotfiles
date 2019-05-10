@@ -18,6 +18,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Personal aliases
 alias vim="nvim"
+alias ptree="tree -I 'venv|__pycache__|*egg-info'"  # Show Python project tree
+alias dog="git log --all --decorate --oneline --graph --date-order"  # Show Git log graph
 
 # Virtual envs
 alias activate='source venv/bin/activate'

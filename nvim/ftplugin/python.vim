@@ -5,7 +5,7 @@ let g:ale_linters_explicit = 1
 let g:ale_linters = {'python': ['pyflakes', 'mypy', 'pyls']}
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {'python': ['black', 'isort']}
-let g:ale_python_mypy_options = "--ignore-missing-imports --python-version 3.7"
+let g:ale_python_mypy_options = "--ignore-missing-imports --namespace-packages --python-version 3.7"
 
 " Jump to errors
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)

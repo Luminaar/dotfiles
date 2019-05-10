@@ -13,6 +13,7 @@ Plug 'tpope/vim-surround'
 Plug 'alfredodeza/pytest.vim'
 Plug 'udalov/kotlin-vim'
 Plug '~/.fzf'
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -41,6 +42,8 @@ filetype plugin indent on
 
 set nohlsearch
 
+set path+=**
+
 
 """ Buffers, windows, tabs
 " Split settings
@@ -53,13 +56,21 @@ nnoremap <Leader>k <C-W><C-K>
 nnoremap <Leader>l <C-W><C-L>
 nnoremap <Leader>h <C-W><C-H>
 
+nnoremap th :tabp<CR>
+nnoremap tl :tabn<CR>
+
 " Buffer navigation
-nnoremap <Leader>e :ls<CR>:b<Space>
+nnoremap <Leader>f :Buffers<return>
 map <Leader>a :e#<return>
-map <Leader>f :FZF<return>
+map <Leader>e :FZF<return>
 
 nnoremap <silent><Leader>. :vertical resize +5<enter>
 nnoremap <silent><Leader>, :vertical resize -5<enter>
+
+" netrw config
+let g:netrw_banner = 0
+
+
 
 
 """ Filetype specific
