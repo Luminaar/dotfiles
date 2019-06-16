@@ -3,7 +3,7 @@
 colorscheme pencil
 
 "" Markdown
-autocmd FileType markdown set tabstop=4 shiftwidth=4 noexpandtab textwidth=80 formatoptions=t2n autoindent fo=tn conceallevel=2 nowrap background=light
+autocmd FileType markdown set tabstop=4 shiftwidth=4 noexpandtab textwidth=80 formatoptions=t2n autoindent fo=tn conceallevel=2 nowrap background=light concealcursor=nvc
 
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_no_default_key_mappings = 1
