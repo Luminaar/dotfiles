@@ -1,6 +1,3 @@
-# Switch CapsLock and Escape keys
-/usr/bin/setxkbmap -option "caps:swapescape"
-
 # Path to your oh-my-zsh installation.
 export ZSH=/home/luminar/.oh-my-zsh
 
