@@ -15,6 +15,8 @@ Plug 'udalov/kotlin-vim'
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'cespare/vim-toml'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 
 call plug#end()
 
@@ -88,10 +90,6 @@ autocmd FileType yaml set tabstop=2 shiftwidth=2 expandtab
 
 "" Javascript
 autocmd FileType javascript set tabstop=2 shiftwidth=2 expandtab
-
-"" Markdown
-autocmd BufNewFile,BufRead,BufNew *.md set filetype=markdown
-autocmd FileType markdown set tabstop=4 shiftwidth=4 noexpandtab textwidth=69 formatoptions=t2n autoindent tw=69 fo=tn
 
 "" Conf file
 au BufNewFile,BufRead *.conf set filetype=hocon
