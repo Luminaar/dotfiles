@@ -14,6 +14,7 @@ Plug 'alfredodeza/pytest.vim'
 Plug 'udalov/kotlin-vim'
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'cespare/vim-toml'
 
 call plug#end()
 
@@ -82,11 +83,14 @@ autocmd FileType html set tabstop=2 shiftwidth=2 expandtab
 au BufEnter *.css set nocindent
 au BufLeave *.css set cindent
 
+"" Yaml
+autocmd FileType yaml set tabstop=2 shiftwidth=2 expandtab
+
 "" Javascript
 autocmd FileType javascript set tabstop=2 shiftwidth=2 expandtab
-autocmd BufNewFile,BufRead,BufNew *.md set filetype=markdown
 
 "" Markdown
+autocmd BufNewFile,BufRead,BufNew *.md set filetype=markdown
 autocmd FileType markdown set tabstop=4 shiftwidth=4 noexpandtab textwidth=69 formatoptions=t2n autoindent tw=69 fo=tn
 
 "" Conf file

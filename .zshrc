@@ -1,6 +1,3 @@
-# Switch CapsLock and Escape keys
-/usr/bin/setxkbmap -option "caps:swapescape"
-
 # Path to your oh-my-zsh installation.
 export ZSH=/home/luminar/.oh-my-zsh
 
@@ -11,6 +8,7 @@ plugins=(
   git
   docker
   kubectl
+  poetry
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -23,7 +21,7 @@ alias dog="git log --all --decorate --oneline --graph --date-order"  # Show Git 
 
 # Virtual envs
 alias activate='source venv/bin/activate'
-alias mkenv="python3.7 -m venv venv; activate;"
+alias mkenv="python3.7 -m venv venv; activate; pip install --upgrade pip setuptools 1>/dev/null;"
 alias delenv="deactivate; rm -rf venv;"
 alias renv="delenv; mkenv;"
 
