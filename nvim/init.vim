@@ -34,6 +34,9 @@ tnoremap <Esc> <C-\><C-n>
 set number
 set relativenumber
 
+map norenu :set nonu norelativenumber<enter>
+map renu :set nu relativenumber<enter>
+
 set ignorecase
 set smartcase
 
