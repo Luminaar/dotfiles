@@ -17,6 +17,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'cespare/vim-toml'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'mhinz/vim-startify'
 
 call plug#end()
 
