@@ -5,21 +5,25 @@ nnoremap <Leader>j :action VimWindowDown<CR>
 nnoremap <Leader>k :action VimWindowUp<CR>
 nnoremap <Leader>l :action VimWindowRight<CR>
 nnoremap <Leader>h :action VimWindowLeft<CR>
-nnoremap <Leader>r :promptrepl<CR>
 
-nnoremap <Leader>f :action VimMotionScrollPageDown<CR>
-nnoremap <Leader>b :action VimMotionScrollPageUp<CR>
+nnoremap <Leader>f :action RecentChangedFiles<CR>
+nnoremap <Leader>e :action GotoFile<CR>
 
-nnoremap <S-F6> :action RenameElement<CR> :action VimMotionLeft<CR>
+"nnoremap <S-F6> :action RenameElement<CR> :action VimMotionLeft<CR>
 nnoremap u :action $Undo<CR>
 nnoremap r :action $Redo<CR>
 
-nnoremap [m :action :MethodUp<CR>
-nnoremap ]m :action :MethodDown<CR>
+nnoremap [m :action MethodUp<CR>
+nnoremap ]m :action MethodDown<CR>
 
 nnoremap th :action VimMotionPreviousTab<CR>
 nnoremap tl :action VimMotionNextTab<CR>
 
-" Relative numbers
 set relativenumber number
 set ignorecase
+set showmode
+set incsearch
+set surround
+set clipboard+=unnamed
+set clipboard+=ideaput
+
