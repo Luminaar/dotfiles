@@ -29,6 +29,7 @@ alias devel='./web2py/web2py.py -a '12345' -i 127.0.0.1 -p 8000'
 alias mysqlp='mysql -u root'
 
 alias ns=nslookup
+alias experiment='cd ~/projects/python/experiments; activate;'
 
 # Completions
 fpath=(~/.zsh/completion $fpath)

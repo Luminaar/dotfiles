@@ -3,7 +3,7 @@ filetype on
 """ Plugins
 call plug#begin()
 
-Plug 'w0rp/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jiangmiao/auto-pairs'
@@ -15,9 +15,7 @@ Plug 'udalov/kotlin-vim'
 Plug '~/.fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'cespare/vim-toml'
-Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-Plug 'mhinz/vim-startify'
 
 call plug#end()
 
@@ -35,8 +33,8 @@ tnoremap <Esc> <C-\><C-n>
 set number
 set relativenumber
 
-map norenu :set nonu norelativenumber<enter>
-map renu :set nu relativenumber<enter>
+map <leader>nonu :set nonu norelativenumber<enter>
+map <leader>nu :set nu relativenumber<enter>
 
 set ignorecase
 set smartcase

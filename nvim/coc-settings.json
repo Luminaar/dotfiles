@@ -1,0 +1,19 @@
+{
+  "python.jediPath": "/home/luminar/.local/lib/python3.7/site-packages",
+  "python.autoComplete.extraPaths": ["venv/lib/python3.7/site-packages"],
+
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "/home/luminar/.local/bin/black",
+
+  "python.linting.prospectorEnabled": true,
+  "python.linting.prospectorPath": "/home/luminar/.local/bin/prospector",
+  "python.linting.prospectorArgs": ["--no-autodetect", "--disable=bad-python3-import"],
+
+  "python.linting.mypyEnabled": true,
+  "python.linting.mypyPath": "/home/luminar/.local/bin/mypy",
+  "python.linting.mypyArgs": ["--python-executable=venv/bin/python"],
+
+  "python.sortImports.path": "/home/luminar/.local/bin/isort",
+  "coc.preferences.formatOnSaveFiletypes": ["python"],
+  "python.workspaceSymbols.tagFilePath": "tags"
+}

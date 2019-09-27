@@ -6,7 +6,7 @@ nnoremap <Leader>k :action VimWindowUp<CR>
 nnoremap <Leader>l :action VimWindowRight<CR>
 nnoremap <Leader>h :action VimWindowLeft<CR>
 
-nnoremap <Leader>f :action RecentChangedFiles<CR>
+nnoremap <Leader>f :action RecentFiles<CR>
 nnoremap <Leader>e :action GotoFile<CR>
 
 "nnoremap <S-F6> :action RenameElement<CR> :action VimMotionLeft<CR>
