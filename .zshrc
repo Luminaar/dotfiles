@@ -16,7 +16,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Personal aliases
 alias vim="nvim"
-alias ptree="tree -I 'venv|__pycache__|*egg-info'"  # Show Python project tree
+alias ptree="tree -I 'venv|__pycache__|*egg-info|htmlcov'"  # Show Python project tree
 alias dog="git log --all --decorate --oneline --graph --date-order"  # Show Git log graph
 
 # Virtual envs
@@ -24,12 +24,14 @@ alias activate='source venv/bin/activate'
 alias mkenv="python3.7 -m venv venv; activate; pip install --upgrade pip setuptools 1>/dev/null;"
 alias delenv="deactivate; rm -rf venv;"
 alias renv="delenv; mkenv;"
+alias nuke="delenv; rm -rf build dist .eggs;"
 
 alias devel='./web2py/web2py.py -a '12345' -i 127.0.0.1 -p 8000'
 alias mysqlp='mysql -u root'
 
 alias ns=nslookup
 alias experiment='cd ~/projects/python/experiments; activate;'
+alias vimconf='cd ~/.config/nvim/'
 
 # Completions
 fpath=(~/.zsh/completion $fpath)

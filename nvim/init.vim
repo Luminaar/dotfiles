@@ -27,14 +27,14 @@ let g:AutoPairsMultilineClose = 0
 
 
 """ Editor settings
-
+nnoremap <leader>w :write<enter>
 tnoremap <Esc> <C-\><C-n>
 
 set number
 set relativenumber
 
-map <leader>nonu :set nonu norelativenumber<enter>
-map <leader>nu :set nu relativenumber<enter>
+map <leader>nonu :set nonu norelativenumber<enter>:set signcolumn=no<enter>
+map <leader>nu :set nu relativenumber<enter>:set signcolumn=yes<enter>
 
 set ignorecase
 set smartcase

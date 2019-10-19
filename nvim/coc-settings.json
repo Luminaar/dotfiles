@@ -5,15 +5,16 @@
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "/home/luminar/.local/bin/black",
 
-  "python.linting.prospectorEnabled": true,
-  "python.linting.prospectorPath": "/home/luminar/.local/bin/prospector",
-  "python.linting.prospectorArgs": ["--no-autodetect", "--disable=bad-python3-import"],
+  "python.linting.pylintEnabled": true,
+  "python.linting.pylintPath": "/home/luminar/.local/bin/linters/venv/bin/pylint",
+  "python.linting.pylintArgs": ["--disable=all", "--enable=unused-import,unused-variable,unused-argument,unexpected-keyword-arg,string,unreachable"],
 
   "python.linting.mypyEnabled": true,
   "python.linting.mypyPath": "/home/luminar/.local/bin/mypy",
-  "python.linting.mypyArgs": ["--python-executable=venv/bin/python"],
+  "python.linting.mypyArgs": ["--python-executable=venv/bin/python", "--namespace-packages"],
 
   "python.sortImports.path": "/home/luminar/.local/bin/isort",
+  "python.sortImports.args": ["-tc"],
   "coc.preferences.formatOnSaveFiletypes": ["python"],
   "python.workspaceSymbols.tagFilePath": "tags"
 }
