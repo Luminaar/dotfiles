@@ -11,7 +11,7 @@
 
   "python.linting.mypyEnabled": true,
   "python.linting.mypyPath": "/home/luminar/.local/bin/mypy",
-  "python.linting.mypyArgs": ["--python-executable=venv/bin/python", "--namespace-packages"],
+  "python.linting.mypyArgs": ["--namespace-packages", "--python-executable=venv/bin/python"],
 
   "python.sortImports.path": "/home/luminar/.local/bin/isort",
   "python.sortImports.args": ["-tc"],
