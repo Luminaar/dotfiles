@@ -5,23 +5,24 @@ ZSH_THEME="steeef"
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(
+  zsh-completions
   git
-  docker
-  kubectl
-  poetry
+#  docker
+#  kubectl
+#  poetry
 )
+autoload -Uz compinit && compinit -i
 
 source $ZSH/oh-my-zsh.sh
 
 
 # Personal aliases
-alias vim="nvim"
 alias ptree="tree -I 'venv|__pycache__|*egg-info|htmlcov|build|dist'"  # Show Python project tree
 alias dog="git log --all --decorate --oneline --graph --date-order"  # Show Git log graph
 
 # Virtual envs
 alias activate='source venv/bin/activate'
-alias mkenv="python3.7 -m venv venv; activate; pip install --upgrade pip setuptools 1>/dev/null;"
+alias mkenv="python3.8 -m venv venv; activate; pip install --upgrade pip setuptools 1>/dev/null;"
 alias delenv="deactivate; rm -rf venv;"
 alias renv="delenv; mkenv;"
 alias nuke="delenv; rm -rf build dist .eggs;"
@@ -33,18 +34,11 @@ alias ns=nslookup
 alias experiment='cd ~/projects/python/experiments; activate;'
 alias vimconf='cd ~/.config/nvim/'
 
-# Completions
-fpath=(~/.zsh/completion $fpath)
-autoload -Uz compinit && compinit -i
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/luminar/.sdkman"
-[[ -s "/home/luminar/.sdkman/bin/sdkman-init.sh" ]] && source "/home/luminar/.sdkman/bin/sdkman-init.sh"
-
-# FZF integration
+## FZF integration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 alias gga='git add $(git -c color.status=always status --short | sed -E "s/(.{2}) (.*)/\1: \2/" | fzf --ansi --nth=2 --tac --no-sort --delimiter=":" --bind=ctrl-a:toggle-all --multi --preview "~/misc/dotfiles/diff-or-cat.sh {2}" | cut --delimiter=":" --fields=2)'
 
 # https://github.com/changyuheng/zsh-interactive-cd
 [ -f ~/.zsh/zsh-interactive-cd.plugin.zsh ] && source ~/.zsh/zsh-interactive-cd.plugin.zsh
 
+export PYLINTRC=~/.config/pylint.conf

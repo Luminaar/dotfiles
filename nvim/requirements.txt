@@ -1,0 +1,6 @@
+# Requirements for neovim python env
+black
+isort
+jedi
+mypy
+pynvim
