@@ -47,6 +47,27 @@ Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 """ Plugin settings
+"" Ncm2
+autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=menuone,noselect,noinsert
+set shortmess+=c
+inoremap <c-c> <ESC>
+
+function! Tab_Or_Complete()
+  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+    return "\<C-N>"
+  else
+    return "\<Tab>"
+  endif
+endfunction
+inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+
+" make it fast
+let ncm2#popup_delay = 5
+let ncm2#complete_length = [[1, 1]]
+" Use new fuzzy based matches
+let g:ncm2#matcher = 'substrfuzzy'
+
 "" Semshi
 let g:semshi#mark_selected_nodes = 0
 let g:semshi#error_sign	= v:false
@@ -74,6 +95,8 @@ let g:AutoPairsMultilineClose = 0
 """ Editor settings
 let g:python3_host_prog = "~/.config/nvim/venv/bin/python"
 let mapleader=" "
+set signcolumn=yes
+
 nnoremap <leader>w :write<enter>
 tnoremap <Esc> <C-\><C-n>
 

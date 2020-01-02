@@ -42,3 +42,4 @@ alias gga='git add $(git -c color.status=always status --short | sed -E "s/(.{2}
 [ -f ~/.zsh/zsh-interactive-cd.plugin.zsh ] && source ~/.zsh/zsh-interactive-cd.plugin.zsh
 
 export PYLINTRC=~/.config/pylint.conf
+export EDITOR="/usr/local/bin/vim"
