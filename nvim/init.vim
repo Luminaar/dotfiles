@@ -54,13 +54,14 @@ set shortmess+=c
 inoremap <c-c> <ESC>
 
 function! Tab_Or_Complete()
-  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w' || pumvisible()
     return "\<C-N>"
   else
     return "\<Tab>"
   endif
 endfunction
 inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+inoremap <S-Tab> <C-P>
 
 " make it fast
 let ncm2#popup_delay = 5
