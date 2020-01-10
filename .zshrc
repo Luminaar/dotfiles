@@ -1,3 +1,5 @@
+export HISTCONTROL=ignorespace
+
 # Path to your oh-my-zsh installation.
 export ZSH=/home/luminar/.oh-my-zsh
 
@@ -22,7 +24,7 @@ alias dog="git log --all --decorate --oneline --graph --date-order"  # Show Git 
 
 # Virtual envs
 alias activate='source venv/bin/activate'
-alias mkenv="python3.8 -m venv venv; activate; pip install --upgrade pip setuptools 1>/dev/null;"
+alias mkenv="python3.8 -m venv venv; activate; pip install --upgrade pip setuptools 1>/dev/null; pip install wheel 1>/dev/null"
 alias delenv="deactivate; rm -rf venv;"
 alias renv="delenv; mkenv;"
 alias nuke="delenv; rm -rf build dist .eggs;"
@@ -43,3 +45,7 @@ alias gga='git add $(git -c color.status=always status --short | sed -E "s/(.{2}
 
 export PYLINTRC=~/.config/pylint.conf
 export EDITOR="/usr/local/bin/vim"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/luminar/.sdkman"
+[[ -s "/home/luminar/.sdkman/bin/sdkman-init.sh" ]] && source "/home/luminar/.sdkman/bin/sdkman-init.sh"

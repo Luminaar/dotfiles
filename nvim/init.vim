@@ -42,7 +42,8 @@ Plug 'numirias/semshi'
 "" Other languages
 Plug 'udalov/kotlin-vim'
 Plug 'cespare/vim-toml'
-Plug 'plasticboy/vim-markdown'
+Plug 'godlygeek/tabular'
+Plug 'gabrielelana/vim-markdown'
 
 call plug#end()
 
@@ -53,19 +54,9 @@ set completeopt=menuone,noselect,noinsert
 set shortmess+=c
 inoremap <c-c> <ESC>
 
-function! Tab_Or_Complete()
-  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w' || pumvisible()
-    return "\<C-N>"
-  else
-    return "\<Tab>"
-  endif
-endfunction
-inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
-inoremap <S-Tab> <C-P>
-
 " make it fast
 let ncm2#popup_delay = 5
-let ncm2#complete_length = [[1, 1]]
+" let ncm2#complete_length = [[1, 1]]
 " Use new fuzzy based matches
 let g:ncm2#matcher = 'substrfuzzy'
 
@@ -84,13 +75,18 @@ let g:jedi#auto_vim_configuration = 0
 let g:jedi#smart_auto_mappings = 0
 let g:jedi#popup_on_dot = 0
 let g:jedi#completions_command = ""
-let g:jedi#show_call_signatures = "1"
+let g:jedi#show_call_signatures = "2"
 
 "" Black
 autocmd BufWritePre *.py execute ':Black'
 
 "" Auto-pairs
 let g:AutoPairsMultilineClose = 0
+
+"" Markdown
+let g:markdown_enable_mappings = 0
+let g:markdown_enable_spell_checking = 0
+let g:markdown_enable_input_abbreviations = 0
 
 
 """ Editor settings
