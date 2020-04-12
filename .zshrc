@@ -1,3 +1,4 @@
+bindkey -v
 export HISTCONTROL=ignorespace
 
 # Path to your oh-my-zsh installation.
@@ -7,11 +8,9 @@ ZSH_THEME="steeef"
 
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(
-  zsh-completions
   git
-#  docker
-#  kubectl
-#  poetry
+  docker
+  kubectl
 )
 autoload -Uz compinit && compinit -i
 
@@ -24,7 +23,7 @@ alias dog="git log --all --decorate --oneline --graph --date-order"  # Show Git 
 
 # Virtual envs
 alias activate='source venv/bin/activate'
-alias mkenv="python3.8 -m venv venv; activate; pip install --upgrade pip setuptools 1>/dev/null; pip install wheel 1>/dev/null"
+alias mkenv="python3.7 -m venv venv; activate; pip install --upgrade pip setuptools 1>/dev/null; pip install wheel 1>/dev/null"
 alias delenv="deactivate; rm -rf venv;"
 alias renv="delenv; mkenv;"
 alias nuke="delenv; rm -rf build dist .eggs;"
@@ -49,3 +48,6 @@ export EDITOR="/usr/local/bin/vim"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/luminar/.sdkman"
 [[ -s "/home/luminar/.sdkman/bin/sdkman-init.sh" ]] && source "/home/luminar/.sdkman/bin/sdkman-init.sh"
+
+# added by travis gem
+[ -f /home/luminar/.travis/travis.sh ] && source /home/luminar/.travis/travis.sh
