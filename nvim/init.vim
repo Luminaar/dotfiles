@@ -41,6 +41,9 @@ Plug 'udalov/kotlin-vim'
 Plug 'cespare/vim-toml'
 Plug 'godlygeek/tabular'
 Plug 'gabrielelana/vim-markdown'
+Plug 'elmcast/elm-vim'
+Plug 'elixir-editors/vim-elixir'
+Plug 'mhinz/vim-mix-format'
 
 call plug#end()
 
@@ -57,15 +60,11 @@ let ncm2#popup_delay = 5
 " Use new fuzzy based matches
 let g:ncm2#matcher = 'substrfuzzy'
 
-"" Semshi
-let g:semshi#mark_selected_nodes = 0
-let g:semshi#error_sign	= v:false
-
 "" Neomake
 call neomake#configure#automake('nrwi', 500)
 let g:neomake_python_enabled_makers = ['pylint', 'mypy']
 let g:neomake_yaml_enabled_makers = ['yamllint']
-
+let g:neomake_elixir_enabled_makers = ['credo']
 
 "" Jedi-vim
 let g:jedi#auto_initialization = 1
@@ -78,6 +77,7 @@ let g:jedi#show_call_signatures = "2"
 
 "" Black
 autocmd BufWritePre *.py execute ':Black'
+let g:black_linelength = 99
 
 "" Auto-pairs
 let g:AutoPairsMultilineClose = 0
@@ -86,6 +86,28 @@ let g:AutoPairsMultilineClose = 0
 let g:markdown_enable_mappings = 0
 let g:markdown_enable_spell_checking = 0
 let g:markdown_enable_input_abbreviations = 0
+
+"" Elm
+let g:elm_setup_keybindings = 0
+" define elm-make maker
+let g:neomake_elm_elmmake_maker = {
+  \ 'exe': 'elm',
+  \ 'buffer_output': 1,
+  \ 'errorformat':
+    \ '%E%.%#--\ %m\ -%# %f' . ',' .
+    \ '%C%l\\|' . ',' .
+    \ '%C%.%#'
+\ }
+
+" enable elm-make on elm
+let g:neomake_elm_enabled_makers = [ 'elmmake' ]
+
+" use neomake to build different files
+augroup neomake_neomake_build
+  autocmd! BufRead,BufWritePost *.elm Neomake elmmake
+augroup end
+
+
 
 
 """ Editor settings
@@ -154,6 +176,11 @@ au BufNewFile,BufRead *.conf set filetype=hocon
 autocmd FileType hocon set tabstop=2 shiftwidth=2 expandtab
 autocmd FileType hocon set cindent
 
+"" Gemini files
+au BufNewFile,BufRead *.gmi set filetype=gemini
+au BufEnter gemini set virtualedit+=onemore
+au BufLeave gemini set virtualedit-=onemore
+
 
 """ Spell check
 " Eglish
@@ -190,4 +217,18 @@ let g:airline#extensions#tabline#enabled = 0
 " 6. set 'tabstop'
 function! AlignTabs()
         let &tabstop=system("rev | cut -f2- | rev | sed 's/\\t/\\n/g' | awk '{print length}' | sort -n -s -r | head -n1", readfile(expand('%')))+5
+endfunction
+
+
+" Toggle scratchpad mode for python
+function! Scratch()
+	:silent :NeomakeToggle
+	:silent :NeomakeClean
+	if &signcolumn ==# "yes"
+		set signcolumn=no
+		echo "Scratchpad mode enabled"
+	else
+		set signcolumn=yes
+		echo "Scratchpad mode disabled"
+	endif
 endfunction
